@@ -55,10 +55,13 @@ class Phone:
 
         status = f"Включен" if self.is_on else "Выключен"
 
-        print(f"Телефон: {self.brand}, {self.model}")
-        print(f"Состояние: {status}")
-        print(f"Заряд: {self.battery}%")
-        print(f"Батарея: {battery_icon}")
+        return {
+            "brand": self.brand,
+            "model": self.model,
+            "battery": self.battery,
+            "is_on": status,
+            "smile_status": battery_icon
+        }
 
 
 iphone = Phone("Apple", "Iphone 15 Pro")
@@ -114,6 +117,6 @@ iphone.battery = 21
 samsung.battery = 51
 xiaomi.battery = 19
 
-iphone.get_status()
-samsung.get_status()
-xiaomi.get_status()
+print(iphone.get_status()["smile_status"])
+print(samsung.get_status()["smile_status"])
+print(xiaomi.get_status()["smile_status"])
