@@ -34,7 +34,7 @@ class Piano(Instrument):
 class Drum(Instrument):
     def __init__(self, name, price, size):
         super().__init__(name, price)
-        self.size = ["маленький", "средний", "большой"]
+        self.size = size
 
     def play(self):
         return "Бьет барабан"
@@ -43,9 +43,9 @@ class Drum(Instrument):
         return "Сильно ударяет по барабану"
 
 #создание объектов
-guitar = Guitar("Yamaha F310", "30 000", "6")
-piano = Piano("Concert 8", "3 000 000", "88")
-drum = Drum("Roland VAD716SW", "1 200 000", "большой")
+guitar = Guitar("Yamaha F310", 30000, 6)
+piano = Piano("Concert 8", 3000000, 88)
+drum = Drum("Roland VAD716SW", 1200000, "большой")
 
 #иинформация об инструментах
 instruments = [guitar, piano, drum]
